@@ -29,8 +29,6 @@ loop do
     if not current_page.empty?
         current_page.each do |element|
             if element.is_a?(Redd::Models::Submission)
-                pp "printing element: "
-                pp element
                 all_saved_permalinks.push("https://www.reddit.com"+element.permalink)
             elsif element.is_a?(Redd::Models::Comment)
                 all_saved_permalinks.push(element.link_permalink+element.id)
